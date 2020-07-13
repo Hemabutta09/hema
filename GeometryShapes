@@ -1,0 +1,170 @@
+#include <iostream>
+
+using namespace std;
+class rectangle
+{
+    int squareHeight, squareWidth;
+    public :void printRect()
+    {
+    cout<<"Enter Height:  ";
+    cin>>squareHeight;
+    cout<<"Enter Width:   ";
+    cin>>squareWidth;
+
+  for(int width=1; width<=squareHeight; width++)
+    {
+   if(width <= 1)
+   for(int width=1; width<=squareWidth; width++)
+            {
+                cout<< "*";
+            }
+        else if(width<squareHeight)
+        {
+            cout<< endl;
+for(int width2=1; width2<=squareWidth; width2++)
+      {
+      if(width2==1 || width2==squareWidth)
+                    cout<< "*";
+                else
+                    cout<< " ";
+            } 
+        }
+        else
+        {
+            cout<< endl;
+for(int width3=1; width3<=squareWidth; width3++)
+   {
+                cout<<"*";
+            }/
+        }
+    }
+    cout<<endl;
+    }
+   
+};
+class square
+{
+    public :void printSquare()
+    {
+    for(int a=1;a<=10;a++)
+        {
+            cout<<"*";
+        }
+            cout<<endl;
+for(int b=1;b<=5;b++)
+    {
+    for(int c=1;c<=1;c++)
+        {
+                cout<<"*";
+        }
+        for(int d=1;d<=8;d++)
+              {
+                cout<<" ";
+              }
+                cout<<"*"<<endl;
+       }
+
+for(int e=1;e<=10;e++)
+ {
+ cout<<"*";
+ }
+ cout<<endl;
+    }
+
+};
+class triangle
+{
+    int base,z=1,i;
+    public: void printTriangle()
+        {
+    cout<<"Enter triangle base/height: ";
+   cin>>base;
+  for (int i=0; i<base; i++)
+  {
+    for (int j=base; j>i; j--)
+    {
+      cout<<" ";
+    }
+    cout<<"*";
+
+    if (i!=0)
+    {
+      for (int k=1; k<=z; k++)
+      {
+        cout<<" ";
+      }
+      cout<<"*";
+      z+=2;
+    }
+    cout<<endl;
+  }
+
+  for (i=0; i<=z+1; i++)
+  {
+    cout<<"*";
+  }cout<<endl;
+        }
+
+};
+class circle
+{
+    float y,k;
+    public: void printCircle()
+    {
+        cout<<"Enter the Radius of the desired circle size: ";
+    cin>>y;
+    float m = 2;
+    for (int i = -y; i <= y; i++)
+        {
+            for (int j = -y; j <= y; j++)
+            {
+                k = ((i*m)/y)*((i*m)/y) + (j/y)*(j/y);
+                if (k >0.95 && k<1.08)
+                    {
+                        cout <<"-";
+                }
+                else
+                    {
+                        cout <<" ";
+                }
+            }
+                cout <<"\n";
+        }cout<<endl;
+    }
+
+};
+int main()
+{
+    int ch;
+    rectangle rect;
+    square sq;
+    triangle tr;
+    circle cr;
+    while(1)
+    {
+        cout<<"To Print RECTANGLE press 1\n";
+        cout<<"To print SQUARE press 2\n";
+        cout<<"To print TRIANGLE press 3\n";
+        cout<<"To print CIRCLE press 4\n";
+        cout<<"Enter your choice: ";
+        cin>>ch;
+        switch(ch)
+        {
+            case 1:cout<<"Printing RECTANGLE.........\n";
+            rect.printRect();
+            break;
+            case 2:cout<<"Printing SQUARE..........\n";
+            sq.printSquare();
+            break;
+            case 3:cout<<"Printing TRIANGLE............\n";
+            tr.printTriangle();
+            break;
+            case 4:cout<<"Printing CIRCLE............\n";
+            cr.printCircle();
+            break;
+            default:cout<<"Invalid choice";
+            break;
+        }
+    }
+    return 0;
+}
